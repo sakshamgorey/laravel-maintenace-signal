@@ -30,7 +30,7 @@ jobs:
             dependencies: highest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -42,7 +42,7 @@ jobs:
           composer require laravel/framework:${{ matrix.laravel }} illuminate/support:${{ matrix.laravel }} orchestra/testbench:${{ matrix.testbench }} --no-update
 
       - name: Install dependencies
-        run: composer update --prefer-dist --no-interaction --no-progress --prefer-${{ matrix.dependencies }}
+        run: composer update --prefer-dist --no-interaction --no-progress --no-security-blocking ${{ matrix.dependencies == 'lowest' && '--prefer-lowest' || '' }}
 
       - name: Run tests
         run: composer test
