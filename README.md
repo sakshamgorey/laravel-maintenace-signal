@@ -14,20 +14,9 @@ This package adds the header only on Laravel maintenance responses by replacing 
 
 ## Installation
 
-This package is not published on Packagist yet. For local testing, add it as a path repository from your Laravel app:
-
-```bash
-composer config repositories.maintenance-signal path ../laravel-maintenance-signal
-composer require saksham/laravel-maintenance-signal:@dev
-```
-
-After the package is published, this section can be changed to the normal Packagist install command.
-
-<!--
 ```bash
 composer require saksham/laravel-maintenance-signal
 ```
--->
 
 ## Publish config
 
